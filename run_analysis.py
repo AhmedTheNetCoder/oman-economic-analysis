@@ -87,7 +87,7 @@ def run_gdp_analysis(df):
 
     # Oman GDP
     oman_gdp = df[(df['indicator_code'] == gdp_ind) &
-                  (df['country_code'] == 'OMN')].sort_values('year')
+                  (df['country_code'] == 'OM')].sort_values('year')
 
     if oman_gdp.empty:
         print("No GDP data available")
@@ -119,7 +119,7 @@ def run_gdp_analysis(df):
 
     # GDP Growth
     oman_growth = df[(df['indicator_code'] == growth_ind) &
-                     (df['country_code'] == 'OMN')].sort_values('year')
+                     (df['country_code'] == 'OM')].sort_values('year')
     oman_growth = oman_growth.dropna(subset=['value'])
 
     if not oman_growth.empty:
@@ -216,9 +216,9 @@ def run_trade_analysis(df):
 
     # Exports vs Imports
     oman_exports = df[(df['indicator_code'] == export_ind) &
-                      (df['country_code'] == 'OMN')].sort_values('year')
+                      (df['country_code'] == 'OM')].sort_values('year')
     oman_imports = df[(df['indicator_code'] == import_ind) &
-                      (df['country_code'] == 'OMN')].sort_values('year')
+                      (df['country_code'] == 'OM')].sort_values('year')
 
     oman_exports = oman_exports.dropna(subset=['value'])
     oman_imports = oman_imports.dropna(subset=['value'])
@@ -243,7 +243,7 @@ def run_trade_analysis(df):
 
     # Oil dependency
     oman_oil = df[(df['indicator_code'] == oil_ind) &
-                  (df['country_code'] == 'OMN')].sort_values('year')
+                  (df['country_code'] == 'OM')].sort_values('year')
     oman_oil = oman_oil.dropna(subset=['value'])
 
     if not oman_oil.empty:
@@ -349,10 +349,10 @@ def print_summary(df):
     gdp_ind = 'NY.GDP.MKTP.CD'
     growth_ind = 'NY.GDP.MKTP.KD.ZG'
 
-    oman_gdp = df[(df['indicator_code'] == gdp_ind) & (df['country_code'] == 'OMN')]
+    oman_gdp = df[(df['indicator_code'] == gdp_ind) & (df['country_code'] == 'OM')]
     oman_gdp = oman_gdp.dropna(subset=['value'])
 
-    oman_growth = df[(df['indicator_code'] == growth_ind) & (df['country_code'] == 'OMN')]
+    oman_growth = df[(df['indicator_code'] == growth_ind) & (df['country_code'] == 'OM')]
     oman_growth = oman_growth.dropna(subset=['value'])
 
     print("\nOman Economic Highlights:")
